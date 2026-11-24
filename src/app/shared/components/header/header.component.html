@@ -1,1 +1,43 @@
-<p>header works!</p>
+
+<ion-header class="rick-header">
+  <ion-toolbar class="rick-toolbar">
+
+    @if (showBackButton) {
+      <ion-buttons slot="start">
+        <ion-back-button
+          class="rick-back"
+          defaultHref="/tabs/characters"
+          icon="arrow-back-outline"
+          text="">
+        </ion-back-button>
+      </ion-buttons>
+    }
+
+    <div class="header-content">
+      <div class="header-info">
+        <span class="header-label">
+          <span class="status-dot"></span>
+          MULTIVERSE DATABASE
+        </span>
+
+        <h1 class="header-title">
+          {{ title }}
+        </h1>
+
+        @if (subtitle) {
+          <p class="header-subtitle">
+            {{ subtitle }}
+          </p>
+        }
+      </div>
+
+      <div class="portal-icon">
+        <div class="portal-inner">
+          <ion-icon name="planet-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+  </ion-toolbar>
+  <div class="header-glow-line"></div>
+</ion-header>
