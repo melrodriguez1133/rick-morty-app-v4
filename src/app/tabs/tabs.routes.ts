@@ -6,29 +6,71 @@ export const routes: Routes = [
   {
     path: 'tabs',
     component: TabsPage,
+
     children: [
+
+      // Página de inicio
       {
-        path: 'tab1',
-        loadComponent: () => import('../tab1/tab1.page').then((m) => m.Tab1Page),
+        path: 'home',
+        loadComponent: () =>
+          import('../feature/home/home.page')
+            .then((m) => m.HomePage),
       },
+
+      // Página de personajes
       {
-        path: 'tab2',
-        loadComponent: () => import('../tab2/tab2.page').then((m) => m.Tab2Page),
+        path: 'characters',
+        loadComponent: () =>
+          import('../feature/characters/characters.page')
+            .then((m) => m.CharactersPage),
       },
+
+      // Página de ubicaciones
       {
-        path: 'tab3',
-        loadComponent: () => import('../tab3/tab3.page').then((m) => m.Tab3Page),
+        path: 'locations',
+        loadComponent: () =>
+          import('../feature/locations/locations.page')
+            .then((m) => m.LocationsPage),
       },
+
+      // Página de episodios
+      {
+        path: 'episodes',
+        loadComponent: () =>
+          import('../feature/episodes/episodes.page')
+            .then((m) => m.EpisodesPage),
+      },
+
+      // Página de favoritos
+      {
+        path: 'favorites',
+        loadComponent: () =>
+          import('../feature/favorites/favorites.page')
+            .then((m) => m.FavoritesPage),
+      },
+
+      // Página de perfil
+      {
+        path: 'profile',
+        loadComponent: () =>
+          import('../feature/profile/profile.page')
+            .then((m) => m.ProfilePage),
+      },
+
+      // Redirección por defecto dentro de Tabs
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/home',
         pathMatch: 'full',
       },
+
     ],
   },
+
+  // Redirección inicial de la aplicación
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/home',
     pathMatch: 'full',
   },
 ];
